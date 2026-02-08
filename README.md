@@ -1,6 +1,6 @@
 <div align="center">
   <br />
-    <a href="https://portfolio25-one.vercel.app" target="_blank">
+    <a href="" target="_blank">
         <img src="./public/portfolio_for_github.png" alt="Portfolio25 Snapshot" />
     </a>
   <br />
