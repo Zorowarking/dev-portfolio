@@ -49,7 +49,7 @@
 - [Three.js](https://threejs.org)
 - [Framer Motion](https://www.framer.com/motion/)
 
-Live Preview [View Portfolio25](https://portfolio25-one.vercel.app)
+Live Preview [View Portfolio25]
 
 ---
 
@@ -58,10 +58,10 @@ Live Preview [View Portfolio25](https://portfolio25-one.vercel.app)
 I’m available for freelance work and open to collaborations.
 
 Contact: **[zaidkhn0404@gmail.com](mailto:zaidkhn0404@gmail.com)**  
-Portfolio: **[https://portfolio25-one.vercel.app](https://portfolio25-one.vercel.app)**
+Portfolio: 
 
 ---
 
 ## License
 
-MIT License © 2025 Yahia Badr
+MIT License © 2025 Mohd Zaid
