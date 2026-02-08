@@ -1,7 +1,7 @@
 <div align="center">
   <br />
-    <a href="" target="_blank">
-        <img src="" alt="" />
+    <a href="https://portfolio25-one.vercel.app" target="_blank">
+        <img src="./public/portfolio_for_github.png" alt="Portfolio25 Snapshot" />
     </a>
   <br />
   <div>
@@ -58,7 +58,7 @@ Live Preview [View Portfolio25]
 I’m available for freelance work and open to collaborations.
 
 Contact: **[zaidkhn0404@gmail.com](mailto:zaidkhn0404@gmail.com)**  
-Portfolio: 
+Portfolio: **[https://portfolio25-one.vercel.app](https://portfolio25-one.vercel.app)**
 
 ---
 
