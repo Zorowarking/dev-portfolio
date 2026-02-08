@@ -2,21 +2,32 @@
 @tailwind components;
 @tailwind utilities;
 
+/* ❌ @apply with colors is NOT allowed in Tailwind v4 */
+/* ✅ Replace with plain CSS */
+html,
+body {
+  background-color: hsl(var(--background));
+  color: hsl(var(--foreground));
+}
+
+/* ❌ @reference is not valid here — remove it */
+
+/* utility class stays the same */
 .flex-center {
-  @apply flex justify-center items-center
+  @apply flex justify-center items-center;
 }
 
 @layer base {
   ::-moz-selection {
-      /* Code for Firefox */
-      color: rgb(255, 255, 255);
-      background: #CBACF9;
-    }
-  
+    color: rgb(255, 255, 255);
+    background: #CBACF9;
+  }
+
   ::selection {
     color: rgb(255, 255, 255);
     background: #6d4d9c;
   }
+
   :root {
     --background: 0 0% 100%;
     --foreground: 240 10% 3.9%;
@@ -82,12 +93,13 @@
 
 @layer base {
   * {
-    @apply border-border !scroll-smooth;
+    border-color: hsl(var(--border));
   }
-  
+
   body {
     font-family: var(--font-inter);
-    @apply bg-background text-foreground overflow-hidden pointer-events-none;
+    overflow: hidden;
+    pointer-events: none;
   }
 
   button {
@@ -107,15 +119,25 @@
   .bg-gradient-130 {
     background: linear-gradient(127deg, #04071D 0%, #0C0E23 100%);
   }
-  .bg-gradient-90{
+
+  .bg-gradient-90 {
     background: linear-gradient(90deg, #04071D 0%, #0C0E23 100%);
   }
-
 }
 
 @media screen and (max-width: 360px) {
-  body{
+  body {
     font-size: 14px;
   }
-  
+}
+.heading {
+  @apply font-bold text-4xl text-center;
+}
+
+@media (min-width: 768px) {
+  .heading {
+    font-size: 3rem;
+    /* text-5xl */
+    line-height: 1;
+  }
 }

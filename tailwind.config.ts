@@ -26,11 +26,10 @@ const config = {
       },
     },
     extend: {
-   
       colors: {
         black: {
           DEFAULT: "#000",
-          100: "#000319", //"#000210",
+          100: "#000319",
           200: "rgba(17, 25, 40, 0.75)",
           300: "rgba(255, 255, 255, 0.125)",
         },
@@ -40,7 +39,7 @@ const config = {
           200: "#C1C2D3",
         },
         blue: {
-          "100": "#E4ECFF",
+          100: "#E4ECFF",
         },
         purple: "#CBACF9",
         border: "hsl(var(--border))",
@@ -77,11 +76,18 @@ const config = {
           foreground: "hsl(var(--card-foreground))",
         },
       },
+
+      /* ✅ moved OUT of keyframes */
+      borderColor: {
+        border: "hsl(var(--border))",
+      },
+
       borderRadius: {
         lg: "var(--radius)",
         md: "calc(var(--radius) - 2px)",
         sm: "calc(var(--radius) - 4px)",
       },
+
       keyframes: {
         "accordion-down": {
           from: { height: "0" },
@@ -102,12 +108,8 @@ const config = {
           },
         },
         shimmer: {
-          from: {
-            backgroundPosition: "0 0",
-          },
-          to: {
-            backgroundPosition: "-200% 0",
-          },
+          from: { backgroundPosition: "0 0" },
+          to: { backgroundPosition: "-200% 0" },
         },
         moveHorizontal: {
           "0%": {
@@ -121,26 +123,14 @@ const config = {
           },
         },
         moveInCircle: {
-          "0%": {
-            transform: "rotate(0deg)",
-          },
-          "50%": {
-            transform: "rotate(180deg)",
-          },
-          "100%": {
-            transform: "rotate(360deg)",
-          },
+          "0%": { transform: "rotate(0deg)" },
+          "50%": { transform: "rotate(180deg)" },
+          "100%": { transform: "rotate(360deg)" },
         },
         moveVertical: {
-          "0%": {
-            transform: "translateY(-50%)",
-          },
-          "50%": {
-            transform: "translateY(50%)",
-          },
-          "100%": {
-            transform: "translateY(-50%)",
-          },
+          "0%": { transform: "translateY(-50%)" },
+          "50%": { transform: "translateY(50%)" },
+          "100%": { transform: "translateY(-50%)" },
         },
         scroll: {
           to: {
@@ -148,6 +138,7 @@ const config = {
           },
         },
       },
+
       animation: {
         "accordion-down": "accordion-down 0.2s ease-out",
         "accordion-up": "accordion-up 0.2s ease-out",
@@ -160,9 +151,7 @@ const config = {
         fifth: "moveInCircle 20s ease infinite",
         scroll:
           "scroll var(--animation-duration, 40s) var(--animation-direction, forwards) linear infinite",
-          
       },
-
     },
   },
   plugins: [
@@ -183,7 +172,7 @@ const config = {
           }),
           "bg-dot": (value: any) => ({
             backgroundImage: `url("${svgToDataUri(
-              `<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 32 32" width="16" height="16" fill="none"><circle fill="${value}" id="pattern-circle" cx="10" cy="10" r="1.6257413380501518"></circle></svg>`
+              `<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 32 32" width="16" height="16" fill="none"><circle fill="${value}" cx="10" cy="10" r="1.6"/></svg>`
             )}")`,
           }),
         },
@@ -194,8 +183,8 @@ const config = {
 } satisfies Config;
 
 function addVariablesForColors({ addBase, theme }: any) {
-  let allColors = flattenColorPalette(theme("colors"));
-  let newVars = Object.fromEntries(
+  const allColors = flattenColorPalette(theme("colors"));
+  const newVars = Object.fromEntries(
     Object.entries(allColors).map(([key, val]) => [`--${key}`, val])
   );
 
